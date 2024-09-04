@@ -1,5 +1,4 @@
 import { FormEventHandler, ReactElement } from "react";
-// import { Button } from "../components";
 
 export function ContactPage(): ReactElement {
 	const handleOnSubmit: FormEventHandler<HTMLFormElement> = (e) => {
@@ -7,10 +6,10 @@ export function ContactPage(): ReactElement {
 	};
 
 	return (
-		<main className="contact-page">
-			<section className="application">
-				<h2>Contact the Avengers</h2>
-				<p className="info">We're not sure they're interested, but sure, go ahead!</p>
+		<main className="contact-page page">
+			<h2>Contact the Avengers</h2>
+			<p className="info">We're not sure they're interested, but sure, go ahead!</p>
+			<section className="application-form">
 				<form className="form" onSubmit={handleOnSubmit}>
 					<input type="text" placeholder="Name" />
 					<input type="email" placeholder="Email" />

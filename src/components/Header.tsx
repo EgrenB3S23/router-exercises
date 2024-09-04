@@ -16,6 +16,9 @@ export function Header() {
 				<Link to="/contact">
 					<h2>Contact</h2>
 				</Link>
+				<Link to="/dashboard">
+					<h2>Dashboard</h2>
+				</Link>
 			</div>
 		</header>
 	);

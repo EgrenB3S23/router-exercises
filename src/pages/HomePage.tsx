@@ -1,17 +1,19 @@
 import { ReactElement } from "react";
-// import { Button } from "../components";
-// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export function HomePage(): ReactElement {
 	const navigate = useNavigate();
 
 	return (
-		<main className="home-page">
-			<h1 className="heading">Welcome to the Avengers Initiative</h1>
+		<main className="home-page page">
+			<h1 className="heading">Welcome home!</h1>
 			<div className="description">
-				<p>We are a team of Earth's mightiest heroes, dedicated to protecting the world from the greatest threats. Join us on our journey to save the universe.</p>
-				<button>TEST</button>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora adipisci excepturi officia fugit vitae explicabo aspernatur voluptatibus voluptatum cupiditate cum obcaecati exercitationem
+					in delectus, laboriosam sunt minus a mollitia alias! Magnam, laudantium exercitationem! Magnam illo sunt asperiores maiores dolores odit beatae blanditiis vel iusto. Temporibus molestiae
+					ullam quod ratione? Nihil repudiandae esse a iure sed nobis necessitatibus praesentium possimus quo.
+				</p>
+				<button>I'm not a Big Red Button, so go ahead</button>
 				{/*
         <Link to="/about">
 					<Button>Assemble</Button>

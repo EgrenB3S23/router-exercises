@@ -4,7 +4,9 @@ import { App } from "./components";
 // import { HomePage } from "./pages/HomePage.tsx";
 // import { AboutPage } from "./pages/AboutPage.tsx";
 // import { ContactPage } from "./pages/ContactPage.tsx";
-import { AboutPage, HomePage, ContactPage } from "./pages";
+import { AboutPage, HomePage, ContactPage, DashboardPage } from "./pages";
+import { Settings } from "./components/Settings";
+import { Stats } from "./components/Stats";
 
 // router built with object:
 export const router = createBrowserRouter([
@@ -25,6 +27,20 @@ export const router = createBrowserRouter([
 				element: <ContactPage />,
 				path: "contact",
 			},
+			{
+				element: <DashboardPage />,
+				path: "dashboard",
+				children: [
+					{
+						element: <Stats />,
+						path: "stats",
+					},
+					{
+						element: <Settings />,
+						path: "settings",
+					},
+				],
+			},
 		],
 	},
 ]);
@@ -36,6 +52,10 @@ export const routerWithJSX = createBrowserRouter(
 			<Route index={true} element={<HomePage />} />
 			<Route path={"about"} element={<AboutPage />} />
 			<Route path={"contact"} element={<ContactPage />} />
+			<Route path={"dashboard"} element={<DashboardPage />}>
+				<Route path={"settings"} element={<Settings />} />
+				<Route path={"stats"} element={<Stats />} />
+			</Route>
 		</Route>
 	)
 );

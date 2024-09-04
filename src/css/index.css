@@ -2,10 +2,6 @@
 	/* margin: 0; */
 	box-sizing: border-box;
 }
-/* #root {
-	margin: 0;
-	padding: 0;
-} */
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -20,6 +16,20 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	padding: 0 2rem;
+	/* align-items: center; */
+	margin: 0 auto;
+	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+
+	* {
+		margin: 0.125rem;
+	}
 }
 
 a {
@@ -42,6 +52,15 @@ body {
 h1 {
 	font-size: 3.2em;
 	line-height: 1.1;
+}
+
+.flex-horizontal {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	> * {
+		/* border: 1px black solid; */
+	}
 }
 
 button {
@@ -78,3 +97,4 @@ button:active {
 		background-color: #f9f9f9;
 	}
 }
+

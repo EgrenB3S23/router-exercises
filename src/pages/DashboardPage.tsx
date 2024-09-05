@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import { Settings } from "../components/Settings";
-import { Stats } from "../components/Stats";
+// import { Settings } from "../components/Settings";
+// import { Stats } from "../components/Stats";
 import { Link, Outlet } from "react-router-dom";
 import React from "react";
 // import { useNavigate } from "react-router-dom";
@@ -22,18 +22,9 @@ export function DashboardPage(): ReactElement {
 					<Link to="./stats">
 						<h2>Stats</h2>
 					</Link>
-					{/* </div> */}
 				</div>
 			</div>
 			<Outlet context={[currentSubPage]} />
-			{/* <div className="flex-horizontal">
-				<section className="settings-section">
-					<Settings />
-				</section>
-				<section className="settings-section">
-					<Stats />
-				</section>
-			</div> */}
 		</main>
 	);
 }

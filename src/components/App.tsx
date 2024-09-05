@@ -6,10 +6,11 @@ import "../css/app.css";
 export function App() {
 	return (
 		<>
-			<Header></Header>
+			<Header />
 			<Outlet />
 		</>
 	);
 }
 
 // export default App;
+

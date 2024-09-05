@@ -1,15 +1,12 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router-dom";
 // import { App } from "./components/App.tsx";
 import { App } from "./components";
-// import { HomePage } from "./pages/HomePage.tsx";
-// import { AboutPage } from "./pages/AboutPage.tsx";
-// import { ContactPage } from "./pages/ContactPage.tsx";
-import { AboutPage, HomePage, ContactPage, DashboardPage } from "./pages";
+import { AboutPage, HomePage, ContactPage, DashboardPage, NotFound } from "./pages";
 import { Settings } from "./components/Settings";
 import { Stats } from "./components/Stats";
 
-// router built with object:
 export const router = createBrowserRouter([
+	// router built as object: I'm using the JSX variant below, but maintaining this in parallell for practice purposes.
 	{
 		element: <App />,
 		path: "",
@@ -18,6 +15,14 @@ export const router = createBrowserRouter([
 				index: true, // index:true sets the default child route to be displayed together with the parsent route.
 				element: <HomePage />,
 				/* path: "/home", */
+			},
+			{
+				element: <HomePage />,
+				path: "/home",
+			},
+			{
+				element: <Navigate to={"/home"} />,
+				path: "/old-home",
 			},
 			{
 				element: <AboutPage />,
@@ -48,8 +53,11 @@ export const router = createBrowserRouter([
 // router built with JSX elements:
 export const routerWithJSX = createBrowserRouter(
 	createRoutesFromElements(
-		<Route element={<App />} path="">
+		<Route element={<App />} path={""}>
+			<Route path={"*"} element={<NotFound />} />
 			<Route index={true} element={<HomePage />} />
+			<Route path={"home"} element={<HomePage />} />
+			<Route path={"/old-home"} element={<Navigate to={"/home"} />} />;
 			<Route path={"about"} element={<AboutPage />} />
 			<Route path={"contact"} element={<ContactPage />} />
 			<Route path={"dashboard"} element={<DashboardPage />}>
@@ -59,3 +67,7 @@ export const routerWithJSX = createBrowserRouter(
 		</Route>
 	)
 );
+
+{
+	/* <Route path="/old-home" element={<Navigate to="/home" />} />; */
+}

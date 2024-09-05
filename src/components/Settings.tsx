@@ -10,10 +10,10 @@ export function Settings(): ReactElement {
 			<div className="description">
 				<p>Lorem ipsum dolor sit amet.</p>
 				<form className="flex-horizontal">
-					<input type="radio" name="" id="" />
-					<input type="checkbox" name="" id="" />
-					<input type="color" name="" id="" />
-					<input type="text" name="" id="" />
+					<input type="radio" name="" id="temp1" />
+					<input type="checkbox" name="" id="temp2" />
+					<input type="color" name="" id="temp3" />
+					<input type="text" name="" id="temp4" />
 				</form>
 			</div>
 		</main>
